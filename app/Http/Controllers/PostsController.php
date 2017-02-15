@@ -52,6 +52,9 @@ class PostsController extends Controller
             'user_id' => auth()->id()
         ]);
 
+        //flash message
+        session()->flash('message', 'post published');
+
     	return redirect('/');
 
     	//dd(request()->all());

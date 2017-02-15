@@ -19,8 +19,10 @@
   <body>
 
     @include('layouts.nav')
-
-    <div class="container">
+    
+    @include('partials.flash')
+        
+      <div class="container">
 
       <div class="row">
 
@@ -33,5 +35,10 @@
     </div><!-- /.container -->
 
     @include('layouts.footer')
+    
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script>
+    $('#flash-message').not('.alert-important').delay(3000).fadeOut(350);
+    </script>
   </body>
 </html>

@@ -42,7 +42,13 @@ class registrationController extends Controller
     	
         auth()->login($user);
 
+        //Send Welcome Email
+
         \Mail::to($user)->send(new Welcome($user));
+
+        //Flash message
+
+        session()->flash('message', 'Welcome Aboard!');
 
     	//Redirect to the home page
     	
